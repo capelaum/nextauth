@@ -13,7 +13,8 @@ type withSSRAuthOptions = {
   roles?: string[];
 };
 
-// redireciona para o login caso o token não esteja setado, na page dashboard
+// redireciona para o dashboard caso o user não tenha permissões
+// caso o user não esteja logado e não tenha toke, redireciona para login
 export function withSSRAuth<P>(
   fn: GetServerSideProps<P>,
   options?: withSSRAuthOptions
